@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a Flight</h2>
+<form action="/flights" method="POST">
+  
+    <label>Airline:
+    <select name="airline">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+      </select>
+  </label>
+
+  <label>Airport:
+    <select name="airport">
+        <option value="AUS" selected>AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+      </select>
+  </label>
+
+  <label>Flight No.
+    <input type="number" name="flightNo" min = 10 max = 9999 pattern = "[1-9]\d{1,3}">
+  </label>
+
+  <label>Departs:
+    <input type="datetime-local" name="departs">
+  </label>
+
+  <button type="submit">Add Flight</button>
+</form>
+
+<%- include('../partials/footer') %>
