@@ -9,7 +9,9 @@
   <div><%= flight.flightNo %></div>
   <div>Departs: </div>
   <div><%= flight.departs %></div>
+  
 </section>
+
 
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST"
@@ -52,5 +54,12 @@
   <h5>No Destinations Added Yet</h5>
 <% } %>
 
+<h2>Tickets:</h2>
+<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+  <ul>
+    <%- tickets.map(t => 
+      `<li>${t.seat} <small>${t.price}</small></li>`
+    )%>
+  </ul>
 
-<%- include('../partials/footer') %>
+ <%- include('../partials/footer') %>
